@@ -2,9 +2,9 @@
 
 
 
-<center>姓名：张丁月 学号：20020007099</center>
+<center></center>
 
-| 姓名和学号？         | 张丁月，20020007099                  |
+| 姓名和学号？         |                   |
 | -------------------- | -------------------------------- |
 | 本实验属于哪门课程？ | 中国海洋大学22夏《移动软件开发》 |
 | 实验名称？           | 实验4：高校新闻网           |
@@ -30,7 +30,8 @@
 	images:用于存放图片素材;
 	utils:用于存放公共JS文件。
 创建完成如下:
-![1.png](../_resources/1.png)
+
+![1](https://user-images.githubusercontent.com/111416724/186104242-4a6f53f1-46ba-4c1c-ab5b-c64a9a990914.png)
 
 2.视图设计
 1）自定义导航栏效果
@@ -152,7 +153,8 @@ Page({
 })
 ```
 效果如图所示：
-![3.png](../_resources/3.png)
+
+![3](https://user-images.githubusercontent.com/111416724/186104302-fdbc861c-7a84-451a-a635-4028c3d543b7.png)
 
 2）然后个人中心页主要包含两个版块,即登录面板和“我的收藏”。登录面板用于显示用户的微信头像和昵称,“我的收藏”用于显示收藏在本地的新闻列表。
 更新完成后部分代码如下：
@@ -225,8 +227,8 @@ my.wxss
 }
 ```
 个人页面效果如下：
-![4.png](../_resources/4.png)
 
+![4](https://user-images.githubusercontent.com/111416724/186104345-4c7ca0e1-ec3b-4a4f-898c-18e73062dfbd.png)
 
 3)设计新闻页面，使用`<view>`进行整体布局。新闻页是用于给用户浏览新闻全文的,需要用户点击首页的新闻列表﹐然后在新窗口中打开该页面。新闻页包括新闻标题﹑新闻图片、新闻正文和新闻日期，相关代码和设计如下：
 detail.js
@@ -291,8 +293,11 @@ detail.wxss
 }
 ```  
 此时可以显示完整的样式效果。由于尚未获得新闻数据﹐所以暂时无法根据用户点击的新闻标题入口显示对应的新闻内容,新闻页效果如下
-![5(1).png](../_resources/5(1).png)
-![5(2).png](../_resources/5(2).png)
+
+![5(1)](https://user-images.githubusercontent.com/111416724/186104381-e957fea4-0b41-447f-a12c-97b17f784899.png)
+
+![5(2)](https://user-images.githubusercontent.com/111416724/186104404-eab75666-4caf-4c94-b811-efb9f5d67c00.png)
+
 3.逻辑实现
 1）公共逻辑
 		使用老师提供的common.js文件，内含3条新闻记录作为示范,可以自行添加或修改新闻内容。
@@ -359,18 +364,21 @@ module.exports = {
 2)首页以及新闻页面逻辑
 		新闻列表展示使用了{{newsList }},因此需要在页面JS文件的 onLoad函数中获取新闻列表,并更新到data属性的newsList参数中。
 		若希望用户点击新闻标题即可实现跳转,需要首先为新闻列表项目添加点击事件，为`<text >`组件添加了自定义触摸事件函数goToDetail,并且使用data-id 属性携带了新闻ID编号。
-![8.png](../_resources/8.png)
+		
+![8](https://user-images.githubusercontent.com/111416724/186104510-e606e38d-7c92-4843-a38f-e369ba09d237.png)
 
 		其次是新闻页，在首页逻辑中已经实现了页面跳转并携带了新闻ID编号,现在需要在新闻页接收ID编号,并查询对应的新闻内容。此时重新从首页点击新闻跳转就可以发现已经能够正确显示标题对应的新闻内容了。
-![9.png](../_resources/9.png)
+		
+![9](https://user-images.githubusercontent.com/111416724/186105052-8ac72df1-e82b-48f0-a4a0-a28e41f5a758.png)
 
 修改detail. wxml代码,追加两个`<button>`组件作为添加/取消收藏新闻的按钮,并使用wx:if 和 wx;else属性使其每次只存在一个。
 效果如下
-![6(1).png](../_resources/6(1).png)
 
-![6(2).png](../_resources/6(2).png)
+![6(1)](https://user-images.githubusercontent.com/111416724/186104542-3432476a-7fb3-45c7-a2c6-0445b367b82e.png)
 
-![7.png](../_resources/7.png)
+![6(2)](https://user-images.githubusercontent.com/111416724/186104594-8d1b2b75-5e46-4d3d-91a1-1069fa38e140.png)
+
+![7](https://user-images.githubusercontent.com/111416724/186104623-c91be862-3a01-49e0-a9f6-54b11a0c155d.png)
 
 修改后部分代码如下：
 detail.js
@@ -498,17 +506,21 @@ button{
 ```
 3）个人中心逻辑
 修改my. wxml 代码,追加`<button >`组件作为登录按钮﹐并且使用wx: if 和wx : clse属性让未登录时只显示按钮,登录后只显示头像和昵称，效果如下：
-![10.png](../_resources/10.png)
+
+![10](https://user-images.githubusercontent.com/111416724/186104669-f1d468fc-8651-4b11-bf99-f3c62cac7623.png)
 
 保存后预览项目,单击按钮后如果Console控制台能够成功输出用户信息数据,则说明获取成功。继续修改my.js文件中getMyInfo函数的代码,将信息更新到动态数据上,完成登录功能后效果如下：
-![11.png](../_resources/11.png)
 
-![12.png](../_resources/12-1.png)
+![11](https://user-images.githubusercontent.com/111416724/186104720-05f4f794-6190-444f-a4a3-225047fe8699.png)
+
+![12](https://user-images.githubusercontent.com/111416724/186104736-517a8166-de46-40a6-951c-08f5b64076ed.png)
+
 
 再修改my. wxml代码,将“我的收藏”后面的数字更改为动态数据效果。继续在detail.js文件中追加getMyFavorites 函数﹐用于展示真正的新闻收藏列表。
 现在从首页开始预览,选择其中任意两篇新闻进入detail页面,并尝试点击收藏。然后退出切换到个人中心页,登录后查看收藏效果。
 此时页面效果如图所示。
-![12.png](../_resources/12.png)
+
+![12](https://user-images.githubusercontent.com/111416724/186104749-672282fa-b2a1-4b37-8acd-0ddcee31bb95.png)
 
 考虑到登录成功后用户还可以手动更改新闻的收藏状态,因此修改my.js 中的 onShow函数﹐判断如果是登录状态就刷新一下收藏列表。
 点击浏览已经收藏的新闻和首页的点击跳转新闻内容功能类似
@@ -677,22 +689,26 @@ my.wxss
 
 列出程序的最终运行结果及截图。
 进入小程序，主页：
-![y1.png](../_resources/y1.png)
+
+![y1](https://user-images.githubusercontent.com/111416724/186104807-651cd140-44e6-4cc3-a734-82bdd89ab665.png)
 
 进入一个新闻页面
-![y4.png](../_resources/y4.png)
+
+![y4](https://user-images.githubusercontent.com/111416724/186104828-53b17ddf-5e54-44f3-99ca-c39d975f7e8c.png)
 
 “我的”页面
-![y2.png](../_resources/y2.png)
+
+![y2](https://user-images.githubusercontent.com/111416724/186104850-1a183f51-58e1-49a0-979e-b4fe944231ec.png)
 
 登录功能
-![y3.png](../_resources/y3.png)
+
+![y3](https://user-images.githubusercontent.com/111416724/186104865-43b58015-e261-4147-9c21-bdb800fd2f61.png)
 
 收藏功能
-![y5.png](../_resources/y5.png)
 
-![y6.png](../_resources/y6.png)
+![y5](https://user-images.githubusercontent.com/111416724/186104892-d5ec0b2f-bc8b-40ff-ac50-231b8549da0d.png)
 
+![y6](https://user-images.githubusercontent.com/111416724/186104911-5e2df316-5f1a-417f-9c4d-10f2fde72c80.png)
 
 ## 四、问题总结与体会
 
